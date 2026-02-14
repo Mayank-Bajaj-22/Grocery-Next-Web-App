@@ -1,0 +1,12 @@
+Promises: 
+    - future value ka placeholders
+    - abhi value nhi mili, but future me milegi (ek object)
+Promises have 3 state:
+    1. Pending → initial state
+    2. Fulfilled → resolve ho gaya
+    3. Rejected → error aa gaya
+
+Syntax:
+    const promise = new Promise((resolve, reject) => {
+        // async work
+    });

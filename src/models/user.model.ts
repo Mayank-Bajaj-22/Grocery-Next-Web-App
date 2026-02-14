@@ -34,7 +34,7 @@ const userSchema = new mongoose.Schema<IUser>({
     }
 }, { timestamps: true })
 
-const User = mongoose.models.User || mongoose.model("userSchema")
+const User = mongoose.models.User || mongoose.model("User", userSchema)
 
 // above line reason - next js me isliye aati hai kyunki Next.js ka backend part har request ya code change ke time automatically reload ho jata hai. 
 
