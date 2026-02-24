@@ -35,6 +35,7 @@ const connectDb = async () => {
         return conn
     } catch (error) {
         console.log("Promise resolve error in db")
+        throw error
     }
 }
 
