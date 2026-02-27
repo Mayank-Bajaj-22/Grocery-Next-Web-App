@@ -45,7 +45,7 @@ export default function Welcome({ nextStep }: propType) {
             <motion.button
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5 }} 
+                transition={{ duration: 0.7 }} 
                 className="inline-flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white font-semibold py-3 px-8 rounded-2xl shadow-md transition-all duration-200 mt-10" 
                 onClick={() => nextStep(2)}
             >
