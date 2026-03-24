@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-const mongodbUrl = process.env.MONOGODB_URL;
+const mongodbUrl = process.env.MONGODB_URL;
 
 if (!mongodbUrl) {
     throw new Error("Please define the MONGODB_URL in environment variable: db error")

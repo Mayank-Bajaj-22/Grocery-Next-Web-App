@@ -6,6 +6,7 @@ import bcrypt from "bcryptjs";
 import Google from "next-auth/providers/google";
 
 export const { handlers, signIn, signOut, auth } = NextAuth({
+    debug:true,
     providers: [
         Credentials({
             name: "Credentials",
@@ -23,6 +24,7 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
 
                 if (!user) {
                     // throw new Error("user does not exists")
+                    console.log("user does not exists")
                     return null
                 }
 
@@ -35,6 +37,7 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
 
                 if (!isMatch) {
                     // throw new Error("incorrect password")
+                    console.log("incorrect password")
                     return null
                 }
 
@@ -85,6 +88,7 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
             }
             return token
         },
+        
         session({ session, token }) {
             if (session.user) {
                 session.user.id = token.id as string,
@@ -101,7 +105,7 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
     },
     session: {
         strategy: "jwt",
-        maxAge: 10*24*60*60*1000
+        maxAge: 10*24*60*60
     },
     secret: process.env.AUTH_SECRET
 })
