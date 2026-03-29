@@ -3,7 +3,7 @@
 import axios from "axios"
 import { ArrowRight, Bike, User, UserCog } from "lucide-react"
 import { motion } from "motion/react"
-import { redirect } from "next/navigation"
+import { redirect } from "next/navigation";
 import { useState } from "react"
 
 export default function EditRoleMobile() {
@@ -24,7 +24,7 @@ export default function EditRoleMobile() {
                 role: selectedRole,
                 mobile
             })
-            // console.log(result.data)
+            console.log(result.data)
             redirect("/")
         } catch (error) {
             console.log(error)
