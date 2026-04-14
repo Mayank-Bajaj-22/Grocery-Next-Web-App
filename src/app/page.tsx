@@ -4,6 +4,9 @@ import User from "../models/user.model";
 import { redirect } from "next/navigation";
 import EditRoleMobile from "../components/EditRoleMobile";
 import Nav from "../components/Nav";
+import UserDashboard from "../components/UserDashboard";
+import AdminDashboard from "../components/AdminDashboard";
+import DeliveryBoy from "../components/DeliveryBoy";
 
 export default async function Home() {
 
@@ -33,6 +36,14 @@ export default async function Home() {
   return (
     <>
       <Nav user={ plainUser } />
+
+      {
+        user.role == "user" ? (
+          <UserDashboard />
+        ) : user.role == "admin" ? (
+          <AdminDashboard />
+        ) : <DeliveryBoy />
+      }
     </>
   )
 }
